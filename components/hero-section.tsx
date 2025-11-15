@@ -1,7 +1,13 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Thermometer, Droplets, Wind, Sun } from 'lucide-react'
 
 export function HeroSection() {
+  const scrollToCalculator = () => {
+    document.getElementById('roi-calculator')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <section className="relative overflow-hidden bg-primary py-20 px-4 md:py-32">
       <div className="absolute inset-0 bg-[url('/agricultural-field-with-greenhouse-technology.jpg')] bg-cover bg-center opacity-10" />
@@ -28,7 +34,7 @@ export function HeroSection() {
           <Button 
             size="lg" 
             className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8"
-            onClick={() => document.getElementById('roi-calculator')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={scrollToCalculator}
           >
             Calcula tu Rentabilidad Ahora
           </Button>
